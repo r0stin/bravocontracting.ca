@@ -1,0 +1,3393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="./support.js"></script>
+  </head>
+  <body>
+    <x-dc>
+      <helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+          html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 88px;
+          }
+          body {
+            margin: 0;
+          }
+          ::selection {
+            background: #34509e;
+            color: #fff;
+          }
+          @keyframes bcfade {
+            from {
+              opacity: 0;
+              transform: translateY(14px);
+            }
+            to {
+              opacity: 1;
+              transform: none;
+            }
+          }
+          @media (max-width: 920px) {
+            [data-bc-desktopnav] {
+              display: none !important;
+            }
+            [data-bc-burger] {
+              display: block !important;
+            }
+            [data-bc-two] {
+              grid-template-columns: 1fr !important;
+            }
+            [data-bc-services] {
+              grid-template-columns: 1fr !important;
+            }
+            [data-bc-reviews] {
+              grid-template-columns: 1fr 1fr !important;
+            }
+            [data-bc-why] {
+              grid-template-columns: 1fr 1fr !important;
+            }
+            [data-bc-process] {
+              grid-template-columns: 1fr 1fr !important;
+            }
+            [data-bc-footer] {
+              grid-template-columns: 1fr 1fr !important;
+            }
+          }
+          @media (max-width: 600px) {
+            [data-bc-reviews] {
+              grid-template-columns: 1fr !important;
+            }
+            [data-bc-why] {
+              grid-template-columns: 1fr !important;
+            }
+            [data-bc-process] {
+              grid-template-columns: 1fr !important;
+            }
+            [data-bc-footer] {
+              grid-template-columns: 1fr 1fr !important;
+            }
+          }
+        </style>
+      </helmet>
+      <div
+        style="--brand: {{ brandColor }}; --ov: {{ overlay }}; font-family:'Public Sans',system-ui,sans-serif; color:#3E3A33; background:#FAF7F1; line-height:1.6; overflow-x:hidden"
+      >
+        <sc-if value="{{ showBar }}" hint-placeholder-val="{{ true }}">
+          <div
+            style="
+              background: #1e2c54;
+              color: #cfd6e8;
+              font-size: 13.5px;
+              letter-spacing: 0.01em;
+            "
+          >
+            <div
+              style="
+                max-width: 1180px;
+                margin: 0 auto;
+                padding: 9px 24px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px 26px;
+                align-items: center;
+                justify-content: space-between;
+              "
+            >
+              <span style="display: flex; align-items: center; gap: 9px"
+                ><span
+                  style="
+                    width: 7px;
+                    height: 7px;
+                    border-radius: 50%;
+                    background: #7ccb8e;
+                    display: inline-block;
+                  "
+                ></span
+                >Free, no-obligation quotes — serving the Greater Toronto
+                Area</span
+              >
+              <span style="display: flex; gap: 22px; align-items: center">
+                <a
+                  href="tel:+16472299435"
+                  style="color: #fff; text-decoration: none; font-weight: 600"
+                  >647-229-9435</a
+                >
+                <a
+                  href="mailto:bravocontractingcanada@gmail.com"
+                  style="color: #cfd6e8; text-decoration: none"
+                  >bravocontractingcanada@gmail.com</a
+                >
+              </span>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- HEADER -->
+        <header
+          style="
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(250, 247, 241, 0.88);
+            backdrop-filter: saturate(160%) blur(12px);
+            border-bottom: 1px solid #e7e1d6;
+          "
+        >
+          <div
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              padding: 14px 24px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              gap: 24px;
+            "
+          >
+            <a
+              href="#top"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                text-decoration: none;
+              "
+            >
+              <img
+                src="assets/bravo-mark.png"
+                alt="Bravo Contracting"
+                width="44"
+                height="44"
+                style="
+                  display: block;
+                  width: 44px;
+                  height: 44px;
+                  object-fit: contain;
+                "
+              />
+              <span
+                style="display: flex; flex-direction: column; line-height: 1.05"
+              >
+                <span
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 800;
+                    font-size: 20px;
+                    letter-spacing: -0.01em;
+                    color: #1e2c54;
+                  "
+                  >Bravo Contracting</span
+                >
+                <span
+                  style="
+                    font-size: 11px;
+                    letter-spacing: 0.18em;
+                    text-transform: uppercase;
+                    color: var(--brand, #34509e);
+                    font-weight: 600;
+                  "
+                  >Build · Renovate · Repair</span
+                >
+              </span>
+            </a>
+            <nav
+              style="display: flex; align-items: center; gap: 30px"
+              data-bc-desktopnav
+            >
+              <a
+                href="#services"
+                style="
+                  color: #3e3a33;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 15px;
+                "
+                >Services</a
+              >
+              <a
+                href="#why"
+                style="
+                  color: #3e3a33;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 15px;
+                "
+                >Why Us</a
+              >
+              <a
+                href="#process"
+                style="
+                  color: #3e3a33;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 15px;
+                "
+                >Process</a
+              >
+              <a
+                href="#reviews"
+                style="
+                  color: #3e3a33;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 15px;
+                "
+                >Reviews</a
+              >
+              <a
+                href="#quote"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 8px;
+                  background: var(--brand, #34509e);
+                  color: #fff;
+                  text-decoration: none;
+                  font-weight: 600;
+                  font-size: 15px;
+                  padding: 11px 20px;
+                  border-radius: 8px;
+                  box-shadow: 0 6px 16px rgba(52, 80, 158, 0.25);
+                "
+                >Get a Free Quote</a
+              >
+            </nav>
+            <button
+              onClick="{{ toggleMenu }}"
+              aria-label="Menu"
+              data-bc-burger
+              style="
+                display: none;
+                background: none;
+                border: 1px solid #d9d2c4;
+                border-radius: 8px;
+                padding: 9px 11px;
+                cursor: pointer;
+              "
+            >
+              <span
+                style="
+                  display: block;
+                  width: 20px;
+                  height: 2px;
+                  background: #1e2c54;
+                  margin: 4px 0;
+                "
+              ></span>
+              <span
+                style="
+                  display: block;
+                  width: 20px;
+                  height: 2px;
+                  background: #1e2c54;
+                  margin: 4px 0;
+                "
+              ></span>
+              <span
+                style="
+                  display: block;
+                  width: 20px;
+                  height: 2px;
+                  background: #1e2c54;
+                  margin: 4px 0;
+                "
+              ></span>
+            </button>
+          </div>
+          <sc-if value="{{ menuOpen }}">
+            <div
+              style="
+                border-top: 1px solid #e7e1d6;
+                background: #faf7f1;
+                padding: 8px 24px 18px;
+              "
+            >
+              <a
+                href="#services"
+                onClick="{{ closeMenu }}"
+                style="
+                  display: block;
+                  padding: 12px 4px;
+                  color: #1e2c54;
+                  text-decoration: none;
+                  font-weight: 600;
+                  border-bottom: 1px solid #ece6da;
+                "
+                >Services</a
+              >
+              <a
+                href="#why"
+                onClick="{{ closeMenu }}"
+                style="
+                  display: block;
+                  padding: 12px 4px;
+                  color: #1e2c54;
+                  text-decoration: none;
+                  font-weight: 600;
+                  border-bottom: 1px solid #ece6da;
+                "
+                >Why Us</a
+              >
+              <a
+                href="#process"
+                onClick="{{ closeMenu }}"
+                style="
+                  display: block;
+                  padding: 12px 4px;
+                  color: #1e2c54;
+                  text-decoration: none;
+                  font-weight: 600;
+                  border-bottom: 1px solid #ece6da;
+                "
+                >Process</a
+              >
+              <a
+                href="#reviews"
+                onClick="{{ closeMenu }}"
+                style="
+                  display: block;
+                  padding: 12px 4px;
+                  color: #1e2c54;
+                  text-decoration: none;
+                  font-weight: 600;
+                  border-bottom: 1px solid #ece6da;
+                "
+                >Reviews</a
+              >
+              <a
+                href="#quote"
+                onClick="{{ closeMenu }}"
+                style="
+                  display: block;
+                  margin-top: 12px;
+                  text-align: center;
+                  padding: 13px;
+                  background: var(--brand, #34509e);
+                  color: #fff;
+                  text-decoration: none;
+                  font-weight: 700;
+                  border-radius: 8px;
+                "
+                >Get a Free Quote</a
+              >
+            </div>
+          </sc-if>
+        </header>
+
+        <span id="top"></span>
+
+        <!-- HERO -->
+        <section style="position: relative; background: #1e2c54">
+          <div
+            style="
+              position: absolute;
+              inset: 0;
+              background: url('assets/photos/hero-home.jpg') center / cover no-repeat;
+            "
+          ></div>
+          <div
+            style="
+              position: absolute;
+              inset: 0;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+          </div>
+          <div
+            style="
+              position: absolute;
+              inset: 0;
+              background: linear-gradient(
+                90deg,
+                rgba(20, 28, 52, calc(var(--ov, 0.45) + 0.35)) 0%,
+                rgba(20, 28, 52, var(--ov, 0.45)) 55%,
+                rgba(20, 28, 52, 0.25) 100%
+              );
+            "
+          ></div>
+          <div
+            style="
+              position: relative;
+              max-width: 1180px;
+              margin: 0 auto;
+              padding: 96px 24px 104px;
+            "
+          >
+            <div style="max-width: 760px; animation: bcfade 0.7s ease both">
+              <span
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 9px;
+                  background: rgba(255, 255, 255, 0.12);
+                  border: 1px solid rgba(255, 255, 255, 0.22);
+                  color: #dfe5f2;
+                  font-size: 13px;
+                  font-weight: 600;
+                  letter-spacing: 0.04em;
+                  padding: 7px 15px;
+                  border-radius: 100px;
+                  margin-bottom: 24px;
+                "
+                >Licensed &amp; insured · Serving the GTA</span
+              >
+              <h1
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 800;
+                  font-size: clamp(36px, 5.4vw, 62px);
+                  line-height: 1.04;
+                  letter-spacing: -0.02em;
+                  color: #fff;
+                  margin: 0 0 20px;
+                "
+              >
+                Renovations done right,<br />trusted contracting across the GTA
+              </h1>
+              <p
+                style="
+                  font-size: clamp(17px, 1.6vw, 20px);
+                  color: #d7dcea;
+                  max-width: 620px;
+                  margin: 0 0 34px;
+                "
+              >
+                Fully insured, with transparent pricing, clean workmanship and
+                on-time delivery — from basements, bathrooms and kitchens to
+                decks, fences, painting and handyman work.
+              </p>
+              <div style="display: flex; flex-wrap: wrap; gap: 14px">
+                <a
+                  href="#quote"
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    background: var(--brand, #34509e);
+                    color: #fff;
+                    text-decoration: none;
+                    font-weight: 700;
+                    font-size: 16px;
+                    padding: 16px 30px;
+                    border-radius: 10px;
+                    box-shadow: 0 12px 30px rgba(52, 80, 158, 0.4);
+                  "
+                  >Get a Free Quote →</a
+                >
+                <a
+                  href="tel:+16472299435"
+                  style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 10px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border: 1px solid rgba(255, 255, 255, 0.32);
+                    color: #fff;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 16px;
+                    padding: 16px 26px;
+                    border-radius: 10px;
+                  "
+                  >Call 647-229-9435</a
+                >
+              </div>
+              <div
+                style="
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 14px 34px;
+                  margin-top: 38px;
+                "
+              >
+                <span
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 9px;
+                    color: #cdd4e6;
+                    font-size: 14.5px;
+                    font-weight: 500;
+                  "
+                  ><svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7CCB8E"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                  >Free on-site estimates</span
+                >
+                <span
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 9px;
+                    color: #cdd4e6;
+                    font-size: 14.5px;
+                    font-weight: 500;
+                  "
+                  ><svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7CCB8E"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                  >Transparent, itemized pricing</span
+                >
+                <span
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 9px;
+                    color: #cdd4e6;
+                    font-size: 14.5px;
+                    font-weight: 500;
+                  "
+                  ><svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#7CCB8E"
+                    stroke-width="2.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 6 9 17l-5-5" /></svg
+                  >Workmanship guaranteed</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- INTRO -->
+        <section
+          style="
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 84px 24px;
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 56px;
+            align-items: center;
+          "
+          data-bc-two
+        >
+          <div>
+            <span
+              style="
+                font-family: 'Archivo', sans-serif;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: var(--brand, #34509e);
+              "
+              >Bravo Contracting</span
+            >
+            <h2
+              style="
+                font-family: 'Archivo', sans-serif;
+                font-weight: 700;
+                font-size: clamp(28px, 3.4vw, 40px);
+                line-height: 1.12;
+                letter-spacing: -0.015em;
+                color: #1e2c54;
+                margin: 14px 0 18px;
+              "
+            >
+              Your trusted contractor in the Greater Toronto Area
+            </h2>
+            <p style="font-size: 17px; color: #5b554a; margin: 0 0 18px">
+              Bravo Contracting is a fully insured renovation and handyman
+              company built on doing honest, careful work and treating every
+              home like our own. From a single repair to a full basement
+              build-out, we handle the details so the process feels easy from
+              the first call to the final walkthrough.
+            </p>
+            <p style="font-size: 17px; color: #5b554a; margin: 0 0 26px">
+              Owned and operated by Peter Scopis, we bring clear communication,
+              premium materials and clean, reliable craftsmanship to homeowners
+              across the GTA.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 12px">
+              <span
+                style="
+                  background: #eaeef7;
+                  color: #2c447f;
+                  font-weight: 600;
+                  font-size: 14px;
+                  padding: 9px 16px;
+                  border-radius: 8px;
+                "
+                >Fully licensed &amp; insured</span
+              >
+              <span
+                style="
+                  background: #eaeef7;
+                  color: #2c447f;
+                  font-weight: 600;
+                  font-size: 14px;
+                  padding: 9px 16px;
+                  border-radius: 8px;
+                "
+                >Free written quotes</span
+              >
+              <span
+                style="
+                  background: #eaeef7;
+                  color: #2c447f;
+                  font-weight: 600;
+                  font-size: 14px;
+                  padding: 9px 16px;
+                  border-radius: 8px;
+                "
+                >5-star rated</span
+              >
+            </div>
+          </div>
+          <div
+            style="
+              position: relative;
+              border-radius: 16px;
+              overflow: hidden;
+              box-shadow: 0 24px 50px rgba(30, 44, 84, 0.16);
+              aspect-ratio: 4/3;
+            "
+          >
+            <div
+              style="
+                position: absolute;
+                inset: 0;
+                background: url('assets/photos/about-project.jpg') center / cover no-repeat;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+            </div>
+          </div>
+        </section>
+
+        <!-- DIFFERENTIATOR -->
+        <section
+          style="
+            background: #fff;
+            border-top: 1px solid #ece6da;
+            border-bottom: 1px solid #ece6da;
+          "
+        >
+          <div
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              padding: 78px 24px;
+              display: grid;
+              grid-template-columns: 0.9fr 1.1fr;
+              gap: 56px;
+              align-items: center;
+            "
+            data-bc-two
+          >
+            <div
+              style="
+                position: relative;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 24px 50px rgba(30, 44, 84, 0.14);
+                aspect-ratio: 3/4;
+              "
+            >
+              <div
+                style="
+                  position: absolute;
+                  inset: 0;
+                  background: url('assets/photos/before-after.jpg') center / cover no-repeat;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+              </div>
+            </div>
+            <div>
+              <span
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-size: 13px;
+                  font-weight: 700;
+                  letter-spacing: 0.16em;
+                  text-transform: uppercase;
+                  color: var(--brand, #34509e);
+                "
+                >The Bravo difference</span
+              >
+              <h2
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 700;
+                  font-size: clamp(28px, 3.4vw, 40px);
+                  line-height: 1.12;
+                  letter-spacing: -0.015em;
+                  color: #1e2c54;
+                  margin: 14px 0 18px;
+                "
+              >
+                We do renovations differently
+              </h2>
+              <p style="font-size: 17px; color: #5b554a; margin: 0 0 22px">
+                Your home is your biggest investment — and renovations shouldn't
+                be stressful. Vague quotes, missed timelines and messy job sites
+                are exactly what we set out to fix. With Bravo, you get a clear
+                scope, an honest price, and a crew that shows up, cleans up, and
+                delivers.
+              </p>
+              <div style="display: grid; gap: 16px">
+                <div style="display: flex; gap: 14px; align-items: flex-start">
+                  <span
+                    style="
+                      flex: none;
+                      width: 34px;
+                      height: 34px;
+                      border-radius: 9px;
+                      background: #eaeef7;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#34509E"
+                      stroke-width="2.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M20 6 9 17l-5-5" /></svg
+                  ></span>
+                  <p style="margin: 0; font-size: 16px; color: #4a463d">
+                    <strong style="color: #1e2c54">No surprises.</strong>
+                    Detailed, itemized quotes — the price we agree on is the
+                    price you pay.
+                  </p>
+                </div>
+                <div style="display: flex; gap: 14px; align-items: flex-start">
+                  <span
+                    style="
+                      flex: none;
+                      width: 34px;
+                      height: 34px;
+                      border-radius: 9px;
+                      background: #eaeef7;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#34509E"
+                      stroke-width="2.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M20 6 9 17l-5-5" /></svg
+                  ></span>
+                  <p style="margin: 0; font-size: 16px; color: #4a463d">
+                    <strong style="color: #1e2c54"
+                      >Respect for your home.</strong
+                    >
+                    We protect your space, keep the site tidy, and finish what
+                    we start.
+                  </p>
+                </div>
+                <div style="display: flex; gap: 14px; align-items: flex-start">
+                  <span
+                    style="
+                      flex: none;
+                      width: 34px;
+                      height: 34px;
+                      border-radius: 9px;
+                      background: #eaeef7;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#34509E"
+                      stroke-width="2.3"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M20 6 9 17l-5-5" /></svg
+                  ></span>
+                  <p style="margin: 0; font-size: 16px; color: #4a463d">
+                    <strong style="color: #1e2c54">One call does it.</strong>
+                    Renos, decks, painting or a quick fix — one reliable team
+                    for the whole list.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section
+          id="services"
+          style="max-width: 1180px; margin: 0 auto; padding: 86px 24px 30px"
+        >
+          <div
+            style="text-align: center; max-width: 680px; margin: 0 auto 48px"
+          >
+            <span
+              style="
+                font-family: 'Archivo', sans-serif;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: var(--brand, #34509e);
+              "
+              >What we do</span
+            >
+            <h2
+              style="
+                font-family: 'Archivo', sans-serif;
+                font-weight: 700;
+                font-size: clamp(28px, 3.6vw, 42px);
+                line-height: 1.1;
+                letter-spacing: -0.015em;
+                color: #1e2c54;
+                margin: 14px 0 14px;
+              "
+            >
+              Complete renovation &amp; handyman services
+            </h2>
+            <p style="font-size: 17px; color: #5b554a; margin: 0">
+              Interior and exterior work for homeowners across the GTA — done to
+              a finish you'll be proud of.
+            </p>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 26px;
+            "
+            data-bc-services
+          >
+            <article
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 26px rgba(30, 44, 84, 0.06);
+              "
+            >
+              <div
+                style="
+                  position: relative;
+                  height: 200px;
+                  background: url('assets/photos/kitchen-bathroom.jpg') center / cover no-repeat;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+              </div>
+              <div style="padding: 26px 26px 28px">
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 700;
+                    font-size: 22px;
+                    color: #1e2c54;
+                    margin: 0 0 8px;
+                  "
+                >
+                  Interior Renovations &amp; Remodels
+                </h3>
+                <p style="font-size: 15.5px; color: #5b554a; margin: 0 0 16px">
+                  Basements, bathrooms and kitchens transformed — from layout
+                  and demo to the final finishing touches.
+                </p>
+                <ul
+                  style="
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 8px 14px;
+                  "
+                >
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Kitchen remodels
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Bathroom renos
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Basement finishing
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Flooring &amp; trim
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 26px rgba(30, 44, 84, 0.06);
+              "
+            >
+              <div
+                style="
+                  position: relative;
+                  height: 200px;
+                  background: url('assets/photos/deck-fence.jpg') center / cover no-repeat;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+              </div>
+              <div style="padding: 26px 26px 28px">
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 700;
+                    font-size: 22px;
+                    color: #1e2c54;
+                    margin: 0 0 8px;
+                  "
+                >
+                  Decks &amp; Fences
+                </h3>
+                <p style="font-size: 15.5px; color: #5b554a; margin: 0 0 16px">
+                  Custom-built outdoor living and privacy, made to stand up to
+                  Canadian seasons year after year.
+                </p>
+                <ul
+                  style="
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 8px 14px;
+                  "
+                >
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Deck design &amp; build
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Fence installation
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Repairs &amp; staining
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Railings &amp; gates
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 26px rgba(30, 44, 84, 0.06);
+              "
+            >
+              <div
+                style="
+                  position: relative;
+                  height: 200px;
+                  background: url('assets/photos/interior-painting.jpg') center / cover no-repeat;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+              </div>
+              <div style="padding: 26px 26px 28px">
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 700;
+                    font-size: 22px;
+                    color: #1e2c54;
+                    margin: 0 0 8px;
+                  "
+                >
+                  Painting
+                </h3>
+                <p style="font-size: 15.5px; color: #5b554a; margin: 0 0 16px">
+                  Crisp, clean interior and exterior painting with careful prep
+                  and a flawless, lasting finish.
+                </p>
+                <ul
+                  style="
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 8px 14px;
+                  "
+                >
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Interior painting
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Exterior painting
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Drywall repair
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Trim &amp; doors
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 16px;
+                overflow: hidden;
+                box-shadow: 0 10px 26px rgba(30, 44, 84, 0.06);
+              "
+            >
+              <div
+                style="
+                  position: relative;
+                  height: 200px;
+                  background: url('assets/photos/handyman-repairs.jpg') center / cover no-repeat;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+              </div>
+              <div style="padding: 26px 26px 28px">
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 700;
+                    font-size: 22px;
+                    color: #1e2c54;
+                    margin: 0 0 8px;
+                  "
+                >
+                  Handyman Services
+                </h3>
+                <p style="font-size: 15.5px; color: #5b554a; margin: 0 0 16px">
+                  The reliable to-do-list crew for all the smaller jobs around
+                  your home — done right, in one visit.
+                </p>
+                <ul
+                  style="
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 8px 14px;
+                  "
+                >
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Repairs &amp; installs
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Drywall &amp; patching
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Doors &amp; hardware
+                  </li>
+                  <li
+                    style="
+                      display: flex;
+                      gap: 8px;
+                      align-items: center;
+                      font-size: 14px;
+                      color: #4a463d;
+                    "
+                  >
+                    <span
+                      style="
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background: var(--brand, #34509e);
+                      "
+                    ></span
+                    >Odd jobs
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <div style="text-align: center; margin-top: 36px">
+            <a
+              href="#quote"
+              style="
+                display: inline-flex;
+                align-items: center;
+                gap: 9px;
+                background: var(--brand, #34509e);
+                color: #fff;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 16px;
+                padding: 15px 30px;
+                border-radius: 10px;
+                box-shadow: 0 12px 28px rgba(52, 80, 158, 0.28);
+              "
+              >Request a free quote →</a
+            >
+          </div>
+        </section>
+
+        <!-- WHY -->
+        <section id="why" style="background: #1e2c54; margin-top: 60px">
+          <div style="max-width: 1180px; margin: 0 auto; padding: 84px 24px">
+            <div
+              style="text-align: center; max-width: 660px; margin: 0 auto 50px"
+            >
+              <span
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-size: 13px;
+                  font-weight: 700;
+                  letter-spacing: 0.16em;
+                  text-transform: uppercase;
+                  color: #9fb0dd;
+                "
+                >Why choose us</span
+              >
+              <h2
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 700;
+                  font-size: clamp(28px, 3.6vw, 42px);
+                  line-height: 1.1;
+                  letter-spacing: -0.015em;
+                  color: #fff;
+                  margin: 14px 0 0;
+                "
+              >
+                Built on trust, finished with care
+              </h2>
+            </div>
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 22px;
+              "
+              data-bc-why
+            >
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  border-radius: 14px;
+                  padding: 28px;
+                "
+              >
+                <span
+                  style="
+                    display: flex;
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 11px;
+                    background: var(--brand, #34509e);
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 16px;
+                  "
+                  ><svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 1v22" />
+                    <path
+                      d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                    /></svg
+                ></span>
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 600;
+                    font-size: 19px;
+                    color: #fff;
+                    margin: 0 0 8px;
+                  "
+                >
+                  Transparent Pricing
+                </h3>
+                <p style="font-size: 15px; color: #bcc6e0; margin: 0">
+                  Detailed, itemized quotes so you know exactly where your money
+                  goes. The price we agree on is the price you pay.
+                </p>
+              </div>
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  border-radius: 14px;
+                  padding: 28px;
+                "
+              >
+                <span
+                  style="
+                    display: flex;
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 11px;
+                    background: var(--brand, #34509e);
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 16px;
+                  "
+                  ><svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                    /></svg
+                ></span>
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 600;
+                    font-size: 19px;
+                    color: #fff;
+                    margin: 0 0 8px;
+                  "
+                >
+                  Skilled Craftsmanship
+                </h3>
+                <p style="font-size: 15px; color: #bcc6e0; margin: 0">
+                  Experienced hands and an eye for detail on every job —
+                  finished to a standard we'd be happy to have in our own homes.
+                </p>
+              </div>
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  border-radius: 14px;
+                  padding: 28px;
+                "
+              >
+                <span
+                  style="
+                    display: flex;
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 11px;
+                    background: var(--brand, #34509e);
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 16px;
+                  "
+                  ><svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3z"
+                    /></svg
+                ></span>
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 600;
+                    font-size: 19px;
+                    color: #fff;
+                    margin: 0 0 8px;
+                  "
+                >
+                  Clean &amp; Respectful
+                </h3>
+                <p style="font-size: 15px; color: #bcc6e0; margin: 0">
+                  We protect your floors and furniture, keep the work area tidy,
+                  and leave your home spotless when we're done.
+                </p>
+              </div>
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  border-radius: 14px;
+                  padding: 28px;
+                "
+              >
+                <span
+                  style="
+                    display: flex;
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 11px;
+                    background: var(--brand, #34509e);
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 16px;
+                  "
+                  ><svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 3h12l4 6-10 13L2 9z" />
+                    <path d="M11 3 8 9l4 13 4-13-3-6" />
+                    <path d="M2 9h20" /></svg
+                ></span>
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 600;
+                    font-size: 19px;
+                    color: #fff;
+                    margin: 0 0 8px;
+                  "
+                >
+                  Quality Materials
+                </h3>
+                <p style="font-size: 15px; color: #bcc6e0; margin: 0">
+                  We source durable, trusted products so your renovation looks
+                  great and holds up for years to come.
+                </p>
+              </div>
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  border-radius: 14px;
+                  padding: 28px;
+                "
+              >
+                <span
+                  style="
+                    display: flex;
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 11px;
+                    background: var(--brand, #34509e);
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 16px;
+                  "
+                  ><svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 2" /></svg
+                ></span>
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 600;
+                    font-size: 19px;
+                    color: #fff;
+                    margin: 0 0 8px;
+                  "
+                >
+                  On-Time Delivery
+                </h3>
+                <p style="font-size: 15px; color: #bcc6e0; margin: 0">
+                  When we give you a start date and a timeline, we stick to it —
+                  and keep you updated every step of the way.
+                </p>
+              </div>
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.05);
+                  border: 1px solid rgba(255, 255, 255, 0.1);
+                  border-radius: 14px;
+                  padding: 28px;
+                "
+              >
+                <span
+                  style="
+                    display: flex;
+                    width: 46px;
+                    height: 46px;
+                    border-radius: 11px;
+                    background: var(--brand, #34509e);
+                    align-items: center;
+                    justify-content: center;
+                    margin-bottom: 16px;
+                  "
+                  ><svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="m9 12 2 2 4-4" /></svg
+                ></span>
+                <h3
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 600;
+                    font-size: 19px;
+                    color: #fff;
+                    margin: 0 0 8px;
+                  "
+                >
+                  Licensed &amp; Insured
+                </h3>
+                <p style="font-size: 15px; color: #bcc6e0; margin: 0">
+                  Fully insured for your complete peace of mind — your property
+                  is protected throughout every project.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROCESS -->
+        <section
+          id="process"
+          style="max-width: 1180px; margin: 0 auto; padding: 86px 24px 70px"
+        >
+          <div
+            style="text-align: center; max-width: 640px; margin: 0 auto 50px"
+          >
+            <span
+              style="
+                font-family: 'Archivo', sans-serif;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: var(--brand, #34509e);
+              "
+              >How it works</span
+            >
+            <h2
+              style="
+                font-family: 'Archivo', sans-serif;
+                font-weight: 700;
+                font-size: clamp(28px, 3.6vw, 42px);
+                line-height: 1.1;
+                letter-spacing: -0.015em;
+                color: #1e2c54;
+                margin: 14px 0 0;
+              "
+            >
+              Getting started is simple
+            </h2>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(4, 1fr);
+              gap: 22px;
+            "
+            data-bc-process
+          >
+            <div
+              style="
+                position: relative;
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 30px 24px;
+              "
+            >
+              <span
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 800;
+                  font-size: 15px;
+                  color: #fff;
+                  background: var(--brand, #34509e);
+                  width: 38px;
+                  height: 38px;
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 18px;
+                "
+                >1</span
+              >
+              <h3
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 700;
+                  font-size: 18px;
+                  color: #1e2c54;
+                  margin: 0 0 8px;
+                "
+              >
+                Reach out
+              </h3>
+              <p style="font-size: 15px; color: #5b554a; margin: 0">
+                Call, text or send the quote form. Tell us a little about your
+                project.
+              </p>
+            </div>
+            <div
+              style="
+                position: relative;
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 30px 24px;
+              "
+            >
+              <span
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 800;
+                  font-size: 15px;
+                  color: #fff;
+                  background: var(--brand, #34509e);
+                  width: 38px;
+                  height: 38px;
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 18px;
+                "
+                >2</span
+              >
+              <h3
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 700;
+                  font-size: 18px;
+                  color: #1e2c54;
+                  margin: 0 0 8px;
+                "
+              >
+                Free on-site quote
+              </h3>
+              <p style="font-size: 15px; color: #5b554a; margin: 0">
+                We visit, talk through your goals, and send a clear, itemized
+                estimate.
+              </p>
+            </div>
+            <div
+              style="
+                position: relative;
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 30px 24px;
+              "
+            >
+              <span
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 800;
+                  font-size: 15px;
+                  color: #fff;
+                  background: var(--brand, #34509e);
+                  width: 38px;
+                  height: 38px;
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 18px;
+                "
+                >3</span
+              >
+              <h3
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 700;
+                  font-size: 18px;
+                  color: #1e2c54;
+                  margin: 0 0 8px;
+                "
+              >
+                We build it
+              </h3>
+              <p style="font-size: 15px; color: #5b554a; margin: 0">
+                Our crew gets to work on schedule, keeping the site clean and
+                you in the loop.
+              </p>
+            </div>
+            <div
+              style="
+                position: relative;
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 30px 24px;
+              "
+            >
+              <span
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 800;
+                  font-size: 15px;
+                  color: #fff;
+                  background: var(--brand, #34509e);
+                  width: 38px;
+                  height: 38px;
+                  border-radius: 10px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  margin-bottom: 18px;
+                "
+                >4</span
+              >
+              <h3
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 700;
+                  font-size: 18px;
+                  color: #1e2c54;
+                  margin: 0 0 8px;
+                "
+              >
+                Final walkthrough
+              </h3>
+              <p style="font-size: 15px; color: #5b554a; margin: 0">
+                We review the finished work together — and aren't done until
+                you're happy.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- TESTIMONIAL BANNER -->
+        <section
+          style="
+            background: #fff;
+            border-top: 1px solid #ece6da;
+            border-bottom: 1px solid #ece6da;
+          "
+        >
+          <div
+            style="
+              max-width: 920px;
+              margin: 0 auto;
+              padding: 74px 24px;
+              text-align: center;
+            "
+          >
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                gap: 5px;
+                margin-bottom: 22px;
+              "
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#F5A623">
+                <path
+                  d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                />
+              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#F5A623">
+                <path
+                  d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                />
+              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#F5A623">
+                <path
+                  d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                />
+              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#F5A623">
+                <path
+                  d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                />
+              </svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#F5A623">
+                <path
+                  d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                />
+              </svg>
+            </div>
+            <p
+              style="
+                font-family: 'Archivo', sans-serif;
+                font-weight: 600;
+                font-size: clamp(22px, 2.8vw, 30px);
+                line-height: 1.35;
+                letter-spacing: -0.01em;
+                color: #1e2c54;
+                margin: 0 0 22px;
+              "
+            >
+              "Peter and his crew finished our basement on time and on budget.
+              Clean, professional, and the quality is fantastic — we already
+              have them booked for our bathroom next."
+            </p>
+            <p
+              style="
+                font-size: 15px;
+                color: #7a7568;
+                margin: 0;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+              "
+            >
+              — The Andersons, Vaughan
+            </p>
+          </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section
+          id="reviews"
+          style="max-width: 1180px; margin: 0 auto; padding: 84px 24px"
+        >
+          <div
+            style="text-align: center; max-width: 640px; margin: 0 auto 48px"
+          >
+            <span
+              style="
+                font-family: 'Archivo', sans-serif;
+                font-size: 13px;
+                font-weight: 700;
+                letter-spacing: 0.16em;
+                text-transform: uppercase;
+                color: var(--brand, #34509e);
+              "
+              >Client reviews</span
+            >
+            <h2
+              style="
+                font-family: 'Archivo', sans-serif;
+                font-weight: 700;
+                font-size: clamp(28px, 3.6vw, 42px);
+                line-height: 1.1;
+                letter-spacing: -0.015em;
+                color: #1e2c54;
+                margin: 14px 0 12px;
+              "
+            >
+              What homeowners across the GTA say
+            </h2>
+            <p
+              style="
+                font-size: 16px;
+                color: #5b554a;
+                margin: 0;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+              "
+            >
+              Rated 5.0 on Google
+              <span style="display: inline-flex; gap: 2px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+              </span>
+            </p>
+          </div>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 22px;
+            "
+            data-bc-reviews
+          >
+            <div
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 26px;
+                box-shadow: 0 8px 22px rgba(30, 44, 84, 0.05);
+              "
+            >
+              <div style="display: flex; gap: 2px; margin-bottom: 14px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+              </div>
+              <p style="font-size: 15.5px; color: #4a463d; margin: 0 0 18px">
+                Bravo gutted and rebuilt our main bathroom and it looks
+                incredible. Peter was upfront about cost, showed up when he said
+                he would, and the tile work is flawless. Highly recommend.
+              </p>
+              <div style="display: flex; align-items: center; gap: 12px">
+                <span
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #eaeef7;
+                    color: #34509e;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Archivo', sans-serif;
+                  "
+                  >JM</span
+                >
+                <span
+                  ><span
+                    style="
+                      display: block;
+                      font-weight: 600;
+                      color: #1e2c54;
+                      font-size: 15px;
+                    "
+                    >Jessica M.</span
+                  ><span style="font-size: 13px; color: #8a8475"
+                    >Markham</span
+                  ></span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 26px;
+                box-shadow: 0 8px 22px rgba(30, 44, 84, 0.05);
+              "
+            >
+              <div style="display: flex; gap: 2px; margin-bottom: 14px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+              </div>
+              <p style="font-size: 15.5px; color: #4a463d; margin: 0 0 18px">
+                We had a new deck built and a section of fence replaced. Solid
+                craftsmanship, fair price, and they cleaned up every day before
+                leaving. Couldn't be happier with how it turned out.
+              </p>
+              <div style="display: flex; align-items: center; gap: 12px">
+                <span
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #eaeef7;
+                    color: #34509e;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Archivo', sans-serif;
+                  "
+                  >DR</span
+                >
+                <span
+                  ><span
+                    style="
+                      display: block;
+                      font-weight: 600;
+                      color: #1e2c54;
+                      font-size: 15px;
+                    "
+                    >David R.</span
+                  ><span style="font-size: 13px; color: #8a8475"
+                    >Toronto</span
+                  ></span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 26px;
+                box-shadow: 0 8px 22px rgba(30, 44, 84, 0.05);
+              "
+            >
+              <div style="display: flex; gap: 2px; margin-bottom: 14px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+              </div>
+              <p style="font-size: 15.5px; color: #4a463d; margin: 0 0 18px">
+                Called Bravo for a handyman list — door repairs, drywall
+                patching, some painting. Peter knocked it all out in a day and
+                the quality was way better than the last guy I hired. My go-to
+                from now on.
+              </p>
+              <div style="display: flex; align-items: center; gap: 12px">
+                <span
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #eaeef7;
+                    color: #34509e;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Archivo', sans-serif;
+                  "
+                  >SP</span
+                >
+                <span
+                  ><span
+                    style="
+                      display: block;
+                      font-weight: 600;
+                      color: #1e2c54;
+                      font-size: 15px;
+                    "
+                    >Sandra P.</span
+                  ><span style="font-size: 13px; color: #8a8475"
+                    >Richmond Hill</span
+                  ></span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 26px;
+                box-shadow: 0 8px 22px rgba(30, 44, 84, 0.05);
+              "
+            >
+              <div style="display: flex; gap: 2px; margin-bottom: 14px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+              </div>
+              <p style="font-size: 15.5px; color: #4a463d; margin: 0 0 18px">
+                Full kitchen remodel from start to finish. Communication was
+                excellent the whole way through and there were zero surprises on
+                the final bill. The space looks like something out of a
+                magazine.
+              </p>
+              <div style="display: flex; align-items: center; gap: 12px">
+                <span
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #eaeef7;
+                    color: #34509e;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Archivo', sans-serif;
+                  "
+                  >MK</span
+                >
+                <span
+                  ><span
+                    style="
+                      display: block;
+                      font-weight: 600;
+                      color: #1e2c54;
+                      font-size: 15px;
+                    "
+                    >Maria K.</span
+                  ><span style="font-size: 13px; color: #8a8475"
+                    >Mississauga</span
+                  ></span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 26px;
+                box-shadow: 0 8px 22px rgba(30, 44, 84, 0.05);
+              "
+            >
+              <div style="display: flex; gap: 2px; margin-bottom: 14px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+              </div>
+              <p style="font-size: 15.5px; color: #4a463d; margin: 0 0 18px">
+                Honest, reliable and genuinely nice to deal with. They finished
+                our basement into a rec room and home office. The whole
+                experience was smooth from quote to cleanup.
+              </p>
+              <div style="display: flex; align-items: center; gap: 12px">
+                <span
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #eaeef7;
+                    color: #34509e;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Archivo', sans-serif;
+                  "
+                  >AT</span
+                >
+                <span
+                  ><span
+                    style="
+                      display: block;
+                      font-weight: 600;
+                      color: #1e2c54;
+                      font-size: 15px;
+                    "
+                    >Anthony T.</span
+                  ><span style="font-size: 13px; color: #8a8475"
+                    >Vaughan</span
+                  ></span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: #fff;
+                border: 1px solid #ece6da;
+                border-radius: 14px;
+                padding: 26px;
+                box-shadow: 0 8px 22px rgba(30, 44, 84, 0.05);
+              "
+            >
+              <div style="display: flex; gap: 2px; margin-bottom: 14px">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  /></svg
+                ><svg width="16" height="16" viewBox="0 0 24 24" fill="#F5A623">
+                  <path
+                    d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"
+                  />
+                </svg>
+              </div>
+              <p style="font-size: 15.5px; color: #4a463d; margin: 0 0 18px">
+                Repainted our whole main floor and replaced some trim. Crisp
+                lines, no mess, and they finished ahead of schedule. You can
+                tell they take real pride in their work.
+              </p>
+              <div style="display: flex; align-items: center; gap: 12px">
+                <span
+                  style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    background: #eaeef7;
+                    color: #34509e;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-family: 'Archivo', sans-serif;
+                  "
+                  >LC</span
+                >
+                <span
+                  ><span
+                    style="
+                      display: block;
+                      font-weight: 600;
+                      color: #1e2c54;
+                      font-size: 15px;
+                    "
+                    >Linda C.</span
+                  ><span style="font-size: 13px; color: #8a8475"
+                    >Etobicoke</span
+                  ></span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- QUOTE / CONTACT -->
+        <section id="quote" style="background: #1e2c54">
+          <div
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              padding: 84px 24px;
+              display: grid;
+              grid-template-columns: 1fr 1.05fr;
+              gap: 54px;
+              align-items: start;
+            "
+            data-bc-two
+          >
+            <div>
+              <span
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-size: 13px;
+                  font-weight: 700;
+                  letter-spacing: 0.16em;
+                  text-transform: uppercase;
+                  color: #9fb0dd;
+                "
+                >Get in touch</span
+              >
+              <h2
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-weight: 700;
+                  font-size: clamp(28px, 3.6vw, 42px);
+                  line-height: 1.08;
+                  letter-spacing: -0.015em;
+                  color: #fff;
+                  margin: 14px 0 16px;
+                "
+              >
+                Ready to start your project?
+              </h2>
+              <p
+                style="
+                  font-size: 17px;
+                  color: #c4cce0;
+                  margin: 0 0 32px;
+                  max-width: 440px;
+                "
+              >
+                Tell us what you have in mind and we'll get back to you with a
+                free, no-obligation quote. Prefer to talk it through? Give Peter
+                a call.
+              </p>
+              <div style="display: grid; gap: 18px">
+                <a
+                  href="tel:+16472299435"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    text-decoration: none;
+                  "
+                >
+                  <span
+                    style="
+                      flex: none;
+                      width: 48px;
+                      height: 48px;
+                      border-radius: 12px;
+                      background: var(--brand, #34509e);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                    ><svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"
+                      /></svg
+                  ></span>
+                  <span
+                    ><span
+                      style="
+                        display: block;
+                        font-size: 13px;
+                        color: #9fb0dd;
+                        letter-spacing: 0.04em;
+                      "
+                      >CALL OR TEXT</span
+                    ><span
+                      style="
+                        display: block;
+                        font-size: 19px;
+                        color: #fff;
+                        font-weight: 700;
+                        font-family: 'Archivo', sans-serif;
+                      "
+                      >647-229-9435</span
+                    ></span
+                  >
+                </a>
+                <a
+                  href="mailto:bravocontractingcanada@gmail.com"
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    text-decoration: none;
+                  "
+                >
+                  <span
+                    style="
+                      flex: none;
+                      width: 48px;
+                      height: 48px;
+                      border-radius: 12px;
+                      background: var(--brand, #34509e);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                    ><svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m22 7-10 6L2 7" /></svg
+                  ></span>
+                  <span
+                    ><span
+                      style="
+                        display: block;
+                        font-size: 13px;
+                        color: #9fb0dd;
+                        letter-spacing: 0.04em;
+                      "
+                      >EMAIL</span
+                    ><span
+                      style="
+                        display: block;
+                        font-size: 17px;
+                        color: #fff;
+                        font-weight: 600;
+                      "
+                      >bravocontractingcanada@gmail.com</span
+                    ></span
+                  >
+                </a>
+                <div style="display: flex; align-items: center; gap: 15px">
+                  <span
+                    style="
+                      flex: none;
+                      width: 48px;
+                      height: 48px;
+                      border-radius: 12px;
+                      background: var(--brand, #34509e);
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                    "
+                    ><svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"
+                      />
+                      <circle cx="12" cy="10" r="3" /></svg
+                  ></span>
+                  <span
+                    ><span
+                      style="
+                        display: block;
+                        font-size: 13px;
+                        color: #9fb0dd;
+                        letter-spacing: 0.04em;
+                      "
+                      >SERVICE AREA</span
+                    ><span
+                      style="
+                        display: block;
+                        font-size: 17px;
+                        color: #fff;
+                        font-weight: 600;
+                      "
+                      >Greater Toronto Area</span
+                    ></span
+                  >
+                </div>
+              </div>
+              <div
+                style="
+                  margin-top: 30px;
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 10px;
+                "
+              >
+                <span
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.16);
+                    color: #dbe1f0;
+                    font-size: 13.5px;
+                    font-weight: 600;
+                    padding: 8px 14px;
+                    border-radius: 8px;
+                  "
+                  >Licensed &amp; insured</span
+                >
+                <span
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.16);
+                    color: #dbe1f0;
+                    font-size: 13.5px;
+                    font-weight: 600;
+                    padding: 8px 14px;
+                    border-radius: 8px;
+                  "
+                  >Free estimates</span
+                >
+                <span
+                  style="
+                    background: rgba(255, 255, 255, 0.08);
+                    border: 1px solid rgba(255, 255, 255, 0.16);
+                    color: #dbe1f0;
+                    font-size: 13.5px;
+                    font-weight: 600;
+                    padding: 8px 14px;
+                    border-radius: 8px;
+                  "
+                  >Mon–Sat, 8am–6pm</span
+                >
+              </div>
+            </div>
+
+            <div
+              style="
+                background: #fff;
+                border-radius: 18px;
+                padding: 34px;
+                box-shadow: 0 30px 60px rgba(0, 0, 0, 0.28);
+              "
+            >
+              <sc-if value="{{ sent }}">
+                <div style="text-align: center; padding: 36px 12px">
+                  <span
+                    style="
+                      display: inline-flex;
+                      width: 64px;
+                      height: 64px;
+                      border-radius: 50%;
+                      background: #eaf6ec;
+                      align-items: center;
+                      justify-content: center;
+                      margin-bottom: 20px;
+                    "
+                    ><svg
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#3a9c52"
+                      stroke-width="2.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M20 6 9 17l-5-5" /></svg
+                  ></span>
+                  <h3
+                    style="
+                      font-family: 'Archivo', sans-serif;
+                      font-weight: 700;
+                      font-size: 24px;
+                      color: #1e2c54;
+                      margin: 0 0 10px;
+                    "
+                  >
+                    Your request is ready to send
+                  </h3>
+                  <p style="font-size: 16px; color: #5b554a; margin: 0 0 22px">
+                    We've opened your email pre-filled with your details — just
+                    hit send and we'll be in touch shortly. Prefer to call?
+                    Reach Peter at
+                    <strong style="color: #1e2c54">647-229-9435</strong>.
+                  </p>
+                  <a
+                    href="tel:+16472299435"
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 9px;
+                      background: var(--brand, #34509e);
+                      color: #fff;
+                      text-decoration: none;
+                      font-weight: 700;
+                      padding: 13px 26px;
+                      border-radius: 9px;
+                    "
+                    >Call now</a
+                  >
+                </div>
+              </sc-if>
+              <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+                <form onSubmit="{{ onSubmit }}">
+                  <h3
+                    style="
+                      font-family: 'Archivo', sans-serif;
+                      font-weight: 700;
+                      font-size: 22px;
+                      color: #1e2c54;
+                      margin: 0 0 6px;
+                    "
+                  >
+                    Request your free quote
+                  </h3>
+                  <p
+                    style="font-size: 14.5px; color: #7a7568; margin: 0 0 22px"
+                  >
+                    We typically reply the same day.
+                  </p>
+                  <div style="display: grid; gap: 16px">
+                    <label style="display: block">
+                      <span
+                        style="
+                          display: block;
+                          font-size: 13.5px;
+                          font-weight: 600;
+                          color: #1e2c54;
+                          margin-bottom: 6px;
+                        "
+                        >Full name</span
+                      >
+                      <input
+                        name="name"
+                        type="text"
+                        required
+                        placeholder="Your name"
+                        style="
+                          width: 100%;
+                          padding: 13px 14px;
+                          border: 1px solid #d9d2c4;
+                          border-radius: 9px;
+                          font-size: 15px;
+                          font-family: inherit;
+                          background: #fbf9f4;
+                          color: #2b2822;
+                        "
+                      />
+                    </label>
+                    <div
+                      style="
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 16px;
+                      "
+                      data-bc-two
+                    >
+                      <label style="display: block">
+                        <span
+                          style="
+                            display: block;
+                            font-size: 13.5px;
+                            font-weight: 600;
+                            color: #1e2c54;
+                            margin-bottom: 6px;
+                          "
+                          >Phone</span
+                        >
+                        <input
+                          name="phone"
+                          type="tel"
+                          required
+                          placeholder="(647) 000-0000"
+                          style="
+                            width: 100%;
+                            padding: 13px 14px;
+                            border: 1px solid #d9d2c4;
+                            border-radius: 9px;
+                            font-size: 15px;
+                            font-family: inherit;
+                            background: #fbf9f4;
+                            color: #2b2822;
+                          "
+                        />
+                      </label>
+                      <label style="display: block">
+                        <span
+                          style="
+                            display: block;
+                            font-size: 13.5px;
+                            font-weight: 600;
+                            color: #1e2c54;
+                            margin-bottom: 6px;
+                          "
+                          >Email</span
+                        >
+                        <input
+                          name="email"
+                          type="email"
+                          placeholder="you@email.com"
+                          style="
+                            width: 100%;
+                            padding: 13px 14px;
+                            border: 1px solid #d9d2c4;
+                            border-radius: 9px;
+                            font-size: 15px;
+                            font-family: inherit;
+                            background: #fbf9f4;
+                            color: #2b2822;
+                          "
+                        />
+                      </label>
+                    </div>
+                    <label style="display: block">
+                      <span
+                        style="
+                          display: block;
+                          font-size: 13.5px;
+                          font-weight: 600;
+                          color: #1e2c54;
+                          margin-bottom: 6px;
+                        "
+                        >What do you need?</span
+                      >
+                      <select
+                        name="service"
+                        style="
+                          width: 100%;
+                          padding: 13px 14px;
+                          border: 1px solid #d9d2c4;
+                          border-radius: 9px;
+                          font-size: 15px;
+                          font-family: inherit;
+                          background: #fbf9f4;
+                          color: #2b2822;
+                        "
+                      >
+                        <option>Interior renovation / remodel</option>
+                        <option>Deck or fence</option>
+                        <option>Painting</option>
+                        <option>Handyman services</option>
+                        <option>Not sure / multiple</option>
+                      </select>
+                    </label>
+                    <label style="display: block">
+                      <span
+                        style="
+                          display: block;
+                          font-size: 13.5px;
+                          font-weight: 600;
+                          color: #1e2c54;
+                          margin-bottom: 6px;
+                        "
+                        >Project details</span
+                      >
+                      <textarea
+                        name="message"
+                        rows="4"
+                        placeholder="Tell us a bit about your project, timeline and location…"
+                        style="
+                          width: 100%;
+                          padding: 13px 14px;
+                          border: 1px solid #d9d2c4;
+                          border-radius: 9px;
+                          font-size: 15px;
+                          font-family: inherit;
+                          background: #fbf9f4;
+                          color: #2b2822;
+                          resize: vertical;
+                        "
+                      ></textarea>
+                    </label>
+                    <button
+                      type="submit"
+                      style="
+                        width: 100%;
+                        background: var(--brand, #34509e);
+                        color: #fff;
+                        border: none;
+                        font-weight: 700;
+                        font-size: 16.5px;
+                        font-family: 'Archivo', sans-serif;
+                        padding: 16px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        box-shadow: 0 12px 26px rgba(52, 80, 158, 0.3);
+                      "
+                    >
+                      Send my request →
+                    </button>
+                    <p
+                      style="
+                        font-size: 12.5px;
+                        color: #9a9484;
+                        margin: 0;
+                        text-align: center;
+                      "
+                    >
+                      By submitting you agree to be contacted about your
+                      project. No spam, ever.
+                    </p>
+                  </div>
+                </form>
+              </sc-if>
+            </div>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer style="background: #16213f; color: #aab3cc">
+          <div
+            style="
+              max-width: 1180px;
+              margin: 0 auto;
+              padding: 64px 24px 0;
+              display: grid;
+              grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+              gap: 40px;
+            "
+            data-bc-footer
+          >
+            <div>
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 11px;
+                  margin-bottom: 16px;
+                "
+              >
+                <img
+                  src="assets/bravo-mark.png"
+                  alt=""
+                  width="40"
+                  height="40"
+                  style="width: 40px; height: 40px; object-fit: contain"
+                />
+                <span
+                  style="
+                    font-family: 'Archivo', sans-serif;
+                    font-weight: 800;
+                    font-size: 19px;
+                    color: #fff;
+                  "
+                  >Bravo Contracting</span
+                >
+              </div>
+              <p
+                style="
+                  font-size: 14.5px;
+                  color: #9aa3bd;
+                  margin: 0 0 18px;
+                  max-width: 280px;
+                "
+              >
+                Renovations, decks, painting and handyman services for
+                homeowners across the Greater Toronto Area.
+              </p>
+              <p style="font-size: 13.5px; color: #7d86a0; margin: 0">
+                Owned &amp; operated by Peter Scopis
+              </p>
+            </div>
+            <div>
+              <h4
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-size: 14px;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  color: #fff;
+                  margin: 0 0 16px;
+                "
+              >
+                Services
+              </h4>
+              <ul
+                style="
+                  list-style: none;
+                  margin: 0;
+                  padding: 0;
+                  display: grid;
+                  gap: 10px;
+                "
+              >
+                <li>
+                  <a
+                    href="#services"
+                    style="
+                      color: #aab3cc;
+                      text-decoration: none;
+                      font-size: 14.5px;
+                    "
+                    >Interior renovations</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    style="
+                      color: #aab3cc;
+                      text-decoration: none;
+                      font-size: 14.5px;
+                    "
+                    >Decks &amp; fences</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    style="
+                      color: #aab3cc;
+                      text-decoration: none;
+                      font-size: 14.5px;
+                    "
+                    >Painting</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    style="
+                      color: #aab3cc;
+                      text-decoration: none;
+                      font-size: 14.5px;
+                    "
+                    >Handyman services</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-size: 14px;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  color: #fff;
+                  margin: 0 0 16px;
+                "
+              >
+                Company
+              </h4>
+              <ul
+                style="
+                  list-style: none;
+                  margin: 0;
+                  padding: 0;
+                  display: grid;
+                  gap: 10px;
+                "
+              >
+                <li>
+                  <a
+                    href="#why"
+                    style="
+                      color: #aab3cc;
+                      text-decoration: none;
+                      font-size: 14.5px;
+                    "
+                    >Why choose us</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#process"
+                    style="
+                      color: #aab3cc;
+                      text-decoration: none;
+                      font-size: 14.5px;
+                    "
+                    >How it works</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#reviews"
+                    style="
+                      color: #aab3cc;
+                      text-decoration: none;
+                      font-size: 14.5px;
+                    "
+                    >Reviews</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#quote"
+                    style="
+                      color: #aab3cc;
+                      text-decoration: none;
+                      font-size: 14.5px;
+                    "
+                    >Get a quote</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4
+                style="
+                  font-family: 'Archivo', sans-serif;
+                  font-size: 14px;
+                  letter-spacing: 0.1em;
+                  text-transform: uppercase;
+                  color: #fff;
+                  margin: 0 0 16px;
+                "
+              >
+                Contact
+              </h4>
+              <ul
+                style="
+                  list-style: none;
+                  margin: 0;
+                  padding: 0;
+                  display: grid;
+                  gap: 12px;
+                "
+              >
+                <li>
+                  <a
+                    href="tel:+16472299435"
+                    style="
+                      color: #fff;
+                      text-decoration: none;
+                      font-size: 16px;
+                      font-weight: 700;
+                      font-family: 'Archivo', sans-serif;
+                    "
+                    >647-229-9435</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="mailto:bravocontractingcanada@gmail.com"
+                    style="
+                      color: #aab3cc;
+                      text-decoration: none;
+                      font-size: 14.5px;
+                    "
+                    >bravocontractingcanada@gmail.com</a
+                  >
+                </li>
+                <li style="font-size: 14.5px; color: #9aa3bd">
+                  Greater Toronto Area
+                </li>
+                <li style="font-size: 14.5px; color: #9aa3bd">
+                  Mon–Sat · 8am–6pm
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            style="
+              max-width: 1180px;
+              margin: 48px auto 0;
+              padding: 22px 24px;
+              border-top: 1px solid rgba(255, 255, 255, 0.08);
+              display: flex;
+              flex-wrap: wrap;
+              gap: 10px;
+              justify-content: space-between;
+              align-items: center;
+            "
+          >
+            <span style="font-size: 13px; color: #7d86a0"
+              >© 2026 Bravo Contracting. All rights reserved.</span
+            >
+            <span style="font-size: 13px; color: #7d86a0"
+              >Licensed &amp; insured · Serving the GTA</span
+            >
+          </div>
+        </footer>
+      </div>
+    </x-dc>
+    <script
+      type="text/x-dc"
+      data-dc-script
+      data-props='{"$preview":{"width":1280,"height":900},"primaryColor":{"editor":"color","default":"#34509E","tsType":"string","options":["#34509E","#1E3A8A","#2B6CB0","#1F5C4B"]},"showAnnouncementBar":{"editor":"boolean","default":true,"tsType":"boolean"},"heroImageOverlay":{"editor":"float","default":0.45,"min":0.15,"max":0.7,"step":0.05,"tsType":"number"}}'
+    >
+      class Component extends DCLogic {
+        state = { menuOpen: false, sent: false };
+        renderVals() {
+          const p = this.props || {};
+          return {
+            brandColor: p.primaryColor ?? '#34509E',
+            overlay: p.heroImageOverlay ?? 0.45,
+            showBar: p.showAnnouncementBar ?? true,
+            menuOpen: this.state.menuOpen,
+            sent: this.state.sent,
+            showForm: !this.state.sent,
+            toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+            closeMenu: () => this.setState({ menuOpen: false }),
+            onSubmit: (e) => {
+              e.preventDefault();
+              const f = e.target;
+              const g = (n) => { const el = f.elements[n]; return el ? String(el.value).trim() : ''; };
+              const name = g('name'), phone = g('phone'), email = g('email'), service = g('service'), details = g('message');
+              const subject = 'Quote request — ' + (service || 'General') + (name ? ' (' + name + ')' : '');
+              const body = 'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nService: ' + service + '\n\nProject details:\n' + details;
+              const mailto = 'mailto:bravocontractingcanada@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+              this.setState({ sent: true });
+              try { window.location.href = mailto; } catch (_) {}
+            }
+          };
+        }
+      }
+    </script>
+  </body>
+</html>
